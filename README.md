@@ -1,4 +1,23 @@
 # ducki-linux-packages
+
+
+
+                        
+    ____             __   _   __    _                 
+   / __ \__  _______/ /__(_) / /   (_)___  __  ___  __
+  / / / / / / / ___/ //_/ / / /   / / __ \/ / / / |/_/
+ / /_/ / /_/ / /__/ ,< / / / /___/ / / / / /_/ />  <  
+/_____/\__,_/\___/_/|_/_/ /_____/_/_/ /_/\__,_/_/|_|  
+                                                      
+                    Lightweight • Fast • Universal
+
+
+
+
+
+
+
+
 repo for ducki linux online packages
 
 how to get me to put your packages on here (if you use ducki linux)
