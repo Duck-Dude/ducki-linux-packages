@@ -1,5 +1,5 @@
 #!/bin/bash
 # a way to get packages via the web
 sudo mkdir /tmp/pm-web
-wget 'https://github.com/Duck-Dude/ducki-linux-packages/raw/refs/heads/main/$1.dpg' /tmp/pm-web
+wget 'https://github.com/Duck-Dude/ducki-linux-packages/raw/refs/heads/main/$1.dpg' /tmp/pm-web # maybe this works?
 pm-i /tmp/pm-web/* # handoff to pm-i
