@@ -1,19 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Index of /</title>
+    <meta charset="UTF-8">
+    <title>DLRepo Index</title>
     <style>
-        body { font-family: sans-serif; background: #121212; color: #e0e0e0; padding: 20px; }
-        a { color: #bb86fc; text-decoration: none; }
+        body { font-family: 'Courier New', Courier, monospace; background: #1a1a1a; color: #ccc; }
+        .container { max-width: 800px; margin: 50px auto; background: #222; padding: 20px; border-radius: 8px; border: 1px solid #444; }
+        a { color: #58a6ff; text-decoration: none; display: block; padding: 5px 0; }
         a:hover { text-decoration: underline; }
-        li { margin: 10px 0; list-style: "📁 "; }
     </style>
 </head>
 <body>
-    <h2>Index of /</h2>
-    <hr>
-    <ul>
-        <li><a href="duckspackage.dpg">duckspackage.dpg</a></li>
-    </ul>
+    <div class="container">
+        <h2>Index of /</h2>
+        <hr>
+        <div id="file-list">Loading files...</div>
+    </div>
+
+    <script>
+        // Replace with your info
+        const USER = 'Duck-Dude';
+        const REPO = 'dlrepo';
+
+        async function getFiles() {
+            const response = await fetch(`https://api.github.com/repos/${USER}/${REPO}/contents/`);
+            const data = await response.json();
+            const listElement = document.getElementById('file-list');
+            listElement.innerHTML = '';
+
+            data.forEach(file => {
+                // Don't show the index file itself or config files
+                if (file.name !== 'index.html' && file.name !== 'CNAME' && file.name !== '.nojekyll') {
+                    const link = document.createElement('a');
+                    link.href = file.name;
+                    link.textContent = `📁 ${file.name}`;
+                    listElement.appendChild(link);
+                }
+            });
+        }
+        getFiles();
+    </script>
 </body>
 </html>
